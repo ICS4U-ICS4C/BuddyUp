@@ -1,3 +1,21 @@
+/*
+  ---Purpose---
+  Adds event notification if date is less than 5 days or if date was passed
+  ---eventNotification---
+  1.Loops htrough the eventObject(It is a 2d array)
+  2.grabs and stores the events
+  3.gets the unfilterd date (Tuesday April 5th) for example
+  4.Make a date object based on the current index of he array
+  5. Use it to call the getMonthFromString function which returns the diffrence between date (int)
+  6.Detemrine if the date passed
+    If date did not pass(time_between_dates is in rage of 0 to 5)
+      Check to make sure it was not aldready displayed
+        If it was not then send notificaion about events
+        then we check if they have a subject on this date by calling findPeople reffer to sendRequests.js
+     If date passed (time_between_dates between -5 and 0 exclusive)
+        Alert event passed
+*/
+
   function getMonthFromString(month) {
     var d = Date.parse(month + "1, 2012");
     if (!isNaN(d)) {
@@ -21,7 +39,9 @@
         let date_raw = eventObject[i][0]
         const date = new Date(`${eventObject[i][1]}-${getMonthFromString(date_raw.split(" ")[1])}-${date_raw.split(" ").slice(-1)[0].replace(/\D/g, '')}`)
         var time_between_dates = diffrence(date)
+        //Get all the notes from the notificaion panel
         var notes = [...document.querySelectorAll('.notification')].map(x => x = x.querySelector('.id').innerText)
+        //Get all the dates form the notificaion panel
         var note_date = [...document.querySelectorAll('.notification')].map(x => x = x.querySelector('.description').innerText.split(" ").splice(-3).join(" "))
         if (time_between_dates >= 0 && time_between_dates <= 5){
           if(notes.indexOf(evnt) == -1 && notes.indexOf(date_raw) == -1){
@@ -33,80 +53,10 @@
               }
           }
         }
-        else if(time_between_dates >= -5 && time_between_dates <= 0){
+        else if(time_between_dates >= -5 && time_between_dates < 0){
           if(notes.indexOf(evnt) == -1 && notes.indexOf(date_raw) == -1){
               addNotification(`Event: ${evnt} was on ${date_raw}`, 'Date passed!',evnt,false,'event')
           }
         }
     }
-  //   try {
-  //     if (updatednew) {
-  //       const date = new Date(`${evnt[1]}-${getMonthFromString(evnt[0][1])}-${evnt[0][2].replace(/\D/g, '')}`)
-  //       var time_between_dates = diffrence(date)
-  //       if (time_between_dates >= 0 && time_between_dates <= 5){
-  //         console.log(evnt[0].join(" "))
-  //         addNotification(`Event: ${evnt[2]} on ${evnt[0].join(" ")}`, 'Date nearing!',evnt[0].join(" "),false,'event')
-  //         // message, title,id,special,type
-  //         if (subject.join(" ").includes((evnt[2].split('-')[0]).toLowerCase())){
-  //           findPeople((evnt[2].split('-')[0]).toLowerCase())
-  //         }
-  //       }
-  //       else if(time_between_dates >= -5 && time_between_dates <= 0){
-  //         addNotification(`Event: ${evnt[2]} on ${evnt[0].join(" ")}`, 'Date passed!',evnt[0].join(" "),false,'event')
-  //       }
-  //     } else {
-  //       var events = []
-  //       eventObject.forEach(async (item, i) => {
-  //         const date = new Date(`${item[1]}-${getMonthFromString(item[0][1])}-${item[0][2].replace(/\D/g, '')}`)
-  //         var time_between_dates = diffrence(date)
-  //
-  //         if (time_between_dates <= 5 && time_between_dates >= -5) {
-  //           item[2].forEach(async (evn, i) => {
-  //             //Check if any subjects match
-  //             if(time_between_dates >= -5){
-  //               addNotification(`Event: ${evn} on ${item[0].join(" ")}`, 'Date nearing!', evn,false,'event')
-  //               if (subject.join(" ").includes((evn.split('-')[0]).toLowerCase())) {
-  //                 if (events.indexOf((evn.split('-')[0]).toLowerCase()) == -1) {
-  //                   events.push((evn.split('-')[0]).toLowerCase())
-  //                 }
-  //               }
-  //             }
-  //             else if(time_between_dates <= 5){
-  //               addNotification(`Event: ${evn} on ${item[0].join(" ")}`, 'Date passed!', evn,false,'event')
-  //             }
-  //
-  //           });
-  //
-  //         }
-  //       })
-  //       for (let i = 0; i < events.length; i++) {
-  //         findPeople(events[i])
-  //       }
-  //       updatednew = true
-  //     }
-  //   } catch {}
-  //
-  //   // Close button function
-  //   // $('.cls').unbind().click(async function(event) {
-  //   //   if(event.currentTarget.parentNode.querySelector('.type').innerText != 'chat'){
-  //   //     console.log(event.currentTarget.parentNode.querySelector('.type'))
-  //   //   var notification = event.currentTarget.parentNode
-  //   //   let descrip = event.currentTarget.parentNode.firstElementChild.childNodes[3].innerText.replace('Event: ', '')
-  //   //   let date = descrip.split(" ").slice(-3).join(" ")
-  //   //   note = descrip.replace(`on ${date}`, '').trim()
-  //   //   await firebase.database().ref("Users/" + firebase.auth().currentUser.uid + "/Events/" + date + "/" + note).remove()
-  //   //   var notL = document.querySelectorAll('.noteList li')
-  //   //   for (let i = 0; i < notL.length; i++) {
-  //   //     if (notL[i].innerHTML.split("<a")[0] == note) {
-  //   //       notL[i].remove()
-  //   //       break
-  //   //     }
-  //   //   }
-  //   //
-  //   //   notification.classList.add('animate-out')
-  //   //   setTimeout(()=>{
-  //   //     notification.remove()
-  //   //   },500)
-  //   // }
-  //   // })
   }

@@ -1,12 +1,8 @@
 /*
-----Idea(start)----
+----Purpose----
 Update messages on the browser
 ----Idea(ends)-----
-
-----Plan(start)----
-
-----Plan(ends)-----
-
+Add html value from firebase to the browser
 */
     // ---Function(s)--- //
     function writeToBrowser(htmlStructure, objToWriteTo) {
@@ -35,6 +31,7 @@ Update messages on the browser
             document.querySelector('.discussion').innerHTML += snapshot.val().messageToDisp
             var objDiv = document.querySelector(".discussion");
             objDiv.scrollTop = objDiv.scrollHeight;
+            //Sets the ready by with current user if their current tab is meet and they are in a group
             if (sessionStorage.getItem('cTab') == 'meet') {
               if (sessionStorage.getItem('cTab') == 'meet' && sessionStorage.getItem('chat') != 'general') {
                 if (snapshot.val().readby.split(" ").indexOf(user) == -1) {
@@ -54,6 +51,7 @@ Update messages on the browser
             document.querySelector('.discussion').innerHTML += snapshot.val().messageToDisp
             var objDiv = document.querySelector(".discussion");
             objDiv.scrollTop = objDiv.scrollHeight;
+            //Sets the ready by with current user if their current tab is meet and they are in a group
             if (sessionStorage.getItem('cTab') == 'meet' && sessionStorage.getItem('chat') != 'general') {
               if (snapshot.val().readby.split(" ").indexOf(user) == -1) {
                 await firebase.database().ref(`${sessionStorage.getItem('chat')}/${snapshot.key}/readby`).set(`${snapshot.val().readby} ${user}`)

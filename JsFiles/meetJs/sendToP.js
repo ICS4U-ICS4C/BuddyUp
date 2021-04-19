@@ -86,7 +86,7 @@ async function newGroup(selectedGroup){
     if(snapshot.exists()){
     if(snapshot.val()[selectedGroup] != undefined){
     /* ---I reliaze this is not good practice, but I did this because it would otherwise make the code messy--- */
-    /* Btw this is to determine what groups are full and what groups are not full --- Did it this way so that, groups woould fill evenly */
+    /* Btw this is to determine what groups are full and what groups are not full --- Did it this way so that, groups would fill evenly */
     groupFull = Object.keys(snapshot.val()[selectedGroup]).map((el,i) => el = Object.keys(snapshot.val()[selectedGroup][el].Members).length < 5?[Object.keys(snapshot.val()[selectedGroup])[i],false]:[Object.keys(snapshot.val()[selectedGroup])[i],true])
     groupEnterd = false
 

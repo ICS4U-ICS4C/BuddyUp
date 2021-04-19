@@ -1,3 +1,36 @@
+/*
+  ---Purpose---
+  To add house and handle click events based on notification
+  ---How it works---
+  Every notification takes an id, and type. This identifies what kind of notification it is
+  Based on that when we close we can locate the id and type and do an action accordingly
+  ---Steps and logic add notifcation---
+  1.Take in title as parameter
+      What the heading will be when notificaiton is displayed
+  2.Take in message as parameter
+      What the message will be when notificaiton is displayed
+  3.Take in id as parameter
+      used to easilsy index firebase
+  4.Takes in type as parameter
+    used to determine what the notificaiton is for, will be more clear in next logic
+
+  5. NOw that we have all the parameters we make the html structure using template literal
+
+  6.Add this notification to actual board
+
+  ---Closing logic---
+  1. Determine type of notificaiton
+    Scince we aldready stored the type of notificaiton in the actual html we can easily find it's value using parent node
+  2. Once we find the type we do diffrent things based on the type when close button is clicked
+    -If p_chat
+      We set checked(FIrebase message's value) to be true and delete notification
+    -gr_chat
+      We add user to the readby child in firbase
+    -event
+      We find the event that mathces the notificaiton id
+      Then we remove from event array using removeFromAllEvents explained on notificaiton.js
+*/
+
 async function addNotification(message, title,id,special,type){
   const notification = document.createElement("div")
   notification.classList.add('notification')

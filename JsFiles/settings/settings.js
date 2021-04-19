@@ -17,10 +17,15 @@ $('#name').keypress((e)=>{
   }
 })
 
-$('.btn1').click(()=>{
-  firebase.auth().signOut()
+$('.btn1').click(async()=>{
+  await firebase.database().ref(`Users/${firebase.auth().currentUser.uid}/online`).set('false')
+
+  try{
+    await firebase.database().ref(sessionStorage.getItem('member')).remove()
+  }catch(err){}
+
+  await firebase.auth().signOut()
   window.location = '../index.html'
-  firebase.database().ref(sessionStorage.getItem('member')).remove()
 })
 
 //Dark mode

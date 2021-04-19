@@ -1,3 +1,5 @@
+
+//For help button, I did not make this, got it from a codepen
 $(".help-button").on("click", function() {
   $(".help-button-wrapper").toggleClass("expanded");
 });

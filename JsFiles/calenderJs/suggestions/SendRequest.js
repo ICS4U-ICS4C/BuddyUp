@@ -1,5 +1,3 @@
-/* ---Getting user name */
-
 async function sendMessage(user, subject, sendTo) {
   let html = `
   <li>
@@ -37,7 +35,7 @@ async function findPeople(subject) {
         for (let i = 0; i < names.length; i++){
           for (let user = 0; user < userObjs.length; user++) {
             if (userObjs[user].name == names[i]){
-              if (userObjs[user].online == 'false' && userObjs[user].name != active_user) {
+              if (userObjs[user].online != 'false' && userObjs[user].name != active_user) {
                 validNames.push(userObjs[user].name)
               }
             }

@@ -1,5 +1,4 @@
 window.onload = async function(){
-  // alert('window loading')
   setTimeout(()=>{
     firebase.auth().onAuthStateChanged(async (user) => {
         if (user && auth.currentUser.emailVerified){
@@ -12,14 +11,3 @@ window.onload = async function(){
     });
   },1500)
 }
-
-async function logout(){
-
-}
-// Is the mosue cursor leaves the borders of the website, the user is logged out and brought to the home page.
-$(document).bind("mouseleave", function(e) {
-    if (e.pageY - $(window).scrollTop() <= 1) {
-      // firebase.database().ref(`Users/${firebase.auth().currentUser.uid}/online`).set('false')
-      // firebase.auth().signOut()
-    }
-});

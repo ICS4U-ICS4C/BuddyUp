@@ -1,6 +1,22 @@
 /*
-  Commented by Rahul
+  ---Purpose---
+  To dynamicly change dates on calendar
+  ---How it works---
+  We have multiple functions that limit the days to the max amount based on leap years
+    Example if there were 28 days on february and the user switches to april, the max day would be 30 so it would make the other 3 days visiable
+  ---Logic of changeDays---
+  Basicly by default calendar has 31 days(Max amout of days) in any given sceneario
+  And when the function is called it is given max days of the selected month, max days of month is found through a variable that houses months and the corrosponding days
+  From there we loop and add to a counter untill it reaches maxDays then stops hiding elments if it is greater then max day
+
+  ---Logic of makeCardinal---
+  takes in a date (5 for example)
+  check to make sure date is not 11 12 or 13 as they are exceptions
+    If they are they get "th" added
+    If they are not then there last digit is indexed in dictionary
+      If it is not null or undefined then that child value gets added to the date and it is returned
 */
+
 
 /* ---Sets current tab user is in--- */
 sessionStorage.setItem('cTab', "Calendar")
@@ -8,7 +24,7 @@ sessionStorage.setItem('cTab', "Calendar")
 
 //Sets box around current date
 function setActive(){
-  if ($('.current_month').text() == currentDate[0] && $('.year').text() == currentDate[1]) {
+  if ($('.current_month').text() == currentDate[0] && $('.year').text() == currentDate[1]){
     let div = document.createElement('span')
     div.setAttribute('class', 'active')
     div.innerText = document.querySelectorAll('.days li')[currentDate[2] - 1].innerText
@@ -24,7 +40,6 @@ function randomPic(month){
       randomIndex = Math.floor(Math.random()*3)
       document.querySelector('.calendar-cont .leftCol').style.backgroundImage = `url(${images[i + 1][randomIndex]})`
       document.querySelector('.calendar-cont .leftCol').style.backgroundSize = "cover"
-      console.log(images[i + 1].slice(-1)[0][randomIndex])
       break
     }
   }
@@ -41,9 +56,6 @@ function changeDays(maxDays) {
       counter += 1
     } else {
       $(this).hide()
-    }
-    if (counter == maxDays) {
-      return
     }
   })
   setActive()
@@ -110,11 +122,7 @@ $(".arrow").click(function() {
 
       // Go to next year
       if (monthInArray + 1 > 11) {
-        if (isLeapYear(currentYear + 1)) {
-          $(".year").text(currentYear + 1)
-        } else {
-          $(".year").text(currentYear + 1)
-        }
+        $(".year").text(currentYear + 1)
       }
       break;
 
@@ -122,11 +130,7 @@ $(".arrow").click(function() {
       // Check if month is january, if so set to december
       if ((monthInArray - 1) % months.length < 0) {
         $(".current_month").text(months[11])
-        if (isLeapYear(currentYear - 1)) {
           $(".year").text(currentYear - 1)
-        } else {
-          $(".year").text(currentYear - 1)
-        }
 
       } else {
         $(".current_month").text(months[(monthInArray - 1) % months.length])
