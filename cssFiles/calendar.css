@@ -8,10 +8,6 @@ The code for calendar.CSS was made by Harsh Trivedi
 	margin: 0px;
 }
 
-:root{
-  --date-color:#ffffff;
-}
-
 body{
 	background-color: #EEEDE9;
   font-size: 96.5%;
@@ -82,7 +78,7 @@ a{
 }
 
 .calendar-cont .noteList li{
-	color: black;
+	color: white;
 	margin-bottom: 10px;
 }
 
@@ -99,7 +95,7 @@ a{
 
 .calendar-cont .notes input{
 	background-color: rgba(0,0,0,0);
-	color: rgb(46,17,45);
+	color: white;
 	border: none;
 	width: 100%;
 }
@@ -288,9 +284,13 @@ a{
   background-color: #ddd;
 }
 
-.white::placeholder{
+::placeholder{
   color: white;
 	font-weight: bold;
+}
+
+.note{
+	color: red;
 }
 
 /* Notification*/
