@@ -1,4 +1,4 @@
-
+var root = document.querySelector(":root");
 var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturaday"]
 var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 var daysOfMonth = {
@@ -47,6 +47,15 @@ var images = [
     ["black","black","black","black","black","black"],
     ["white","white","white","white","white","white"]
   ]]
+]
+
+var things_to_change = [
+  document.querySelector('.date'),
+  'x',
+  document.querySelector('.note'),
+  'x',
+  'x',
+  'x'
 ]
 
 var subject = ["physics", "math", "computer-science", "science", "earth", "biology", "chemistry", "earth and space science"]

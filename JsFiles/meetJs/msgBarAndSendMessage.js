@@ -4,6 +4,7 @@
 sessionStorage.setItem('cTab',"meet")
 /* ---Variables--- */
 var user = sessionStorage.getItem('username')
+console.log(user)
 let profileImage = sessionStorage.getItem('URL')
 /* ---Badword filter--- */
 function cleanMessage(message){
@@ -14,7 +15,7 @@ return message
 
 async function upVote(user){
   await firebase.database().ref(`upvote/${sessionStorage.getItem('chat').split('/')[1]}/${user}`).once('value',async snapshot=>{
-      await firebase.database().ref(`upvote/${sessionStorage.getItem('chat').split('/')[1]}/${user}`).set(snapshot.val()*1+1)
+    await firebase.database().ref(`upvote/${sessionStorage.getItem('chat').split('/')[1]}/${user}`).set(snapshot.val()*1+1)
   })
 }
 

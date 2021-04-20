@@ -1,7 +1,15 @@
 /*
 ---Name: Harsh Trivedi
-The code for calendar.CSS was made by Harsh Trivedi
+The code for calendar.CSS was made by Harsh Trivedi and edited by Rahul
  */
+
+:root{
+	--color1: black;
+	--color3: black;
+	--color4: black;
+	--color5: black;
+}
+
 *{
 	outline: none;
 	padding: 0px;
@@ -108,7 +116,6 @@ a{
 .calendar-cont .addNote,
 .calendar-cont .removeNote{
 	float: right;
-	color: black;
 	font-weight: bold;
 	margin-left: 20px;
 }
@@ -222,77 +229,6 @@ a{
 @media screen and (max-width: 290px) {
   .days li {width: 12.2%;}
 }
-
-.navbar {
-	border-radius: 0;
-	position: absolute;
-	z-index: 100;
-  overflow: hidden;
-  background-color: #444;
-	height: 7%;
-	width: 100%;
-}
-.navbar a {
-  float: left;
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-.dropdown {
-  float: right;
-  overflow: hidden;
-	margin-right: 0%;
-}
-
-.dropdown .dropbtn {
-  font-size: 32px;
-  border: none;
-  outline: none;
-  color: white;
-  padding: 7px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-}
-
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: #666;
-}
-
-.dropdown-content {
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-  border-top: 1px #666 solid
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-::placeholder{
-  color: white;
-	font-weight: bold;
-}
-
-.note{
-	color: red;
-}
-
 /* Notification*/
 .notification-panel{
 	position: absolute;
@@ -382,10 +318,6 @@ margin-top: 16px;
   background-color: #999;
 }
 
-.asd{
-	overflow-y: hidden;
-}
-
 .animate-out{
 	animation: fade-out .5s;
 }
@@ -402,4 +334,21 @@ margin-top: 16px;
 	flex-direction: column;
 	justify-content: space-between;
 	border-radius: 10%;
+}
+
+/* ---placeholders--- */
+::placeholder{
+	color:var(--color1);
+}
+
+.calendar-cont .addNote{
+		color:var(--color3);
+}
+
+.calendar-cont .removeNote{
+	color:var(--color4);
+}
+
+.calendar-cont .noteList li{
+	color:var(--color5)
 }

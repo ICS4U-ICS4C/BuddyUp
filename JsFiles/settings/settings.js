@@ -19,13 +19,17 @@ $('#name').keypress((e)=>{
 
 $('.btn1').click(async()=>{
   await firebase.database().ref(`Users/${firebase.auth().currentUser.uid}/online`).set('false')
-
+  await firebase.database().ref(`Users/${firebase.auth().currentUser.uid}/online`).once('value',snapshot=>{
+    console.log(snapshot.val())
+  })
   try{
     await firebase.database().ref(sessionStorage.getItem('member')).remove()
   }catch(err){}
+  setTimeout(async()=>{
+    await firebase.auth().signOut()
+    window.location = '../index.html'
+  },500)
 
-  await firebase.auth().signOut()
-  window.location = '../index.html'
 })
 
 //Dark mode
