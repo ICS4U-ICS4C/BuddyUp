@@ -15,7 +15,7 @@ This script adds underlines to dates that have events
 Grabs all the events and puts in array if the current index at event array contains the note, and date passed to the function
     If it does contain it
       it we delete it from allEvents array using splice
-      
+
     After the loop the allEvents array is flattend to be a 1d array and then we check if the date is present in the flattend array
     if it contain the date in the array then it is Detemrined that there is still a event on that date and the underline should not be delted,
     makes sure that even if the first condition matches, we make sure that it is not the active box
