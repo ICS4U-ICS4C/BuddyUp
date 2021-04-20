@@ -40,6 +40,9 @@ function randomPic(month){
       randomIndex = Math.floor(Math.random()*3)
       document.querySelector('.calendar-cont .leftCol').style.backgroundImage = `url(${images[i + 1][randomIndex]})`
       document.querySelector('.calendar-cont .leftCol').style.backgroundSize = "cover"
+
+      //change style color based on picture
+      
       break
     }
   }

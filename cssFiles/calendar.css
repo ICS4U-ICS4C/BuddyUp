@@ -2,13 +2,14 @@
 ---Name: Harsh Trivedi
 The code for calendar.CSS was made by Harsh Trivedi
  */
-
-*,:active{
-	outline: none;
-}
 *{
+	outline: none;
 	padding: 0px;
 	margin: 0px;
+}
+
+:root{
+  --date-color:#ffffff;
 }
 
 body{
@@ -287,12 +288,12 @@ a{
   background-color: #ddd;
 }
 
-::placeholder{
+.white::placeholder{
   color: white;
 	font-weight: bold;
 }
 
-/* Notification */
+/* Notification*/
 .notification-panel{
 	position: absolute;
 	background-color: #333;

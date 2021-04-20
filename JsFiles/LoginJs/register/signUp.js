@@ -57,9 +57,9 @@ function signUp(email,password){
 function register() {
   //check if valid email
   if (email.value.split('@')[1] != "pdsb.net" ) {
-    // shake('input[name=username]')
-    // setValue('input[name=username]',"Invalid email only @pdsb.net")
-    // return
+    shake('input[name=username]')
+    setValue('input[name=username]',"Invalid email only @pdsb.net")
+    return
   }
   //check if passwords match
   if (original_password.value.toString() == confirm_password.value.toString()) {
