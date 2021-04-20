@@ -43,10 +43,14 @@ body {
   color: white;
   align-items: center;
   padding:100px;
+  justify-content: center;
+  text-align: center;
 }
 
 .main-container .input {
   position: relative;
+  justify-content: center;
+  text-align: center;
 }
 
 .main-container .user-input input {
@@ -60,10 +64,14 @@ body {
   margin-bottom: 10px;
   background: transparent;
   font-size: 17px;
+  justify-content: center;
+  text-align: center;
 }
 
 .user-input input {
   margin-top: 10px;
+  justify-content: center;
+  text-align: center;
 }
 
 .main-container .name-input input {
@@ -77,10 +85,14 @@ body {
   margin-bottom: 10px;
   background: transparent;
   font-size: 17px;
+  justify-content: center;
+  text-align: center;
 }
 
 .name-input input {
   margin-top: 10px;
+  justify-content: center;
+  text-align: center;
 }
 
 .main-container .lastname-input input {
@@ -89,7 +101,9 @@ body {
   height: 100%;
   border-color: black;
   border-width: 5px;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
+  justify-content: center;
+  text-align: center;
 }
 
 .lastname-input input {
@@ -100,6 +114,8 @@ body {
   padding: 8px;
   border-width: 5px;
   background-color: rgba(0, 181, 204, 1);
+  justify-content: center;
+  text-align: center;
 }
 .btn1:hover {
   transition: .3s ease-in-out;
