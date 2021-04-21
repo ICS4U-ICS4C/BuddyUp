@@ -24,7 +24,7 @@
     return -1;
   }
 
-  function diffrence(d1) {
+  function diffrence(d1){
     // https://www.delftstack.com/howto/javascript/javascript-subtract-dates/
     const cDate = Date.UTC(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate())
     const evDate = Date.UTC(d1.getFullYear(), d1.getMonth(), d1.getDate())
@@ -32,11 +32,11 @@
     return (evDate - cDate) / day
   }
 
-
-  async function eventNotification(eventObject) {
+  async function eventNotification(eventObject){
     for(let i = 0; i<eventObject.length;i++){
         let evnt = eventObject[i].slice(-1)[0]
         let date_raw = eventObject[i][0]
+        var read = eventObject[i][2]
         const date = new Date(`${eventObject[i][1]}-${getMonthFromString(date_raw.split(" ")[1])}-${date_raw.split(" ").slice(-1)[0].replace(/\D/g, '')}`)
         var time_between_dates = diffrence(date)
         //Get all the notes from the notificaion panel
@@ -46,11 +46,13 @@
         if (time_between_dates >= 0 && time_between_dates <= 5){
           if(notes.indexOf(evnt) == -1 && notes.indexOf(date_raw) == -1){
               addNotification(`Event: ${evnt} is on ${date_raw}`, 'Date Nearing!',evnt,false,'event')
-              for(let i = 0; i<subject.length;i++){
-                if(evnt.toLowerCase().includes(subject[i].toLowerCase())){
-                  findPeople(subject[i])
+              if(!read){
+              for(let s = 0; s<subject.length;s++){
+                if(evnt.toLowerCase().includes(subject[s].toLowerCase())){
+                  findPeople(subject[s], i)
                 }
               }
+            }
           }
         }
         else if(time_between_dates >= -5 && time_between_dates < 0){

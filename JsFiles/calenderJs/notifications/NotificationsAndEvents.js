@@ -48,7 +48,7 @@ function setEvent(dateArray) {
 function removeFromAllEvents(note,date){
   var days = document.querySelectorAll('.days li')
     for(let row = 0; row<allEvents.length;row++){
-      if(allEvents[row][0].includes(date) && allEvents[row][2].includes(note)){
+      if(allEvents[row].indexOf(date) > -1 && allEvents[row].indexOf(note) >-1){
         allEvents.splice(row,1)
         break
       }
@@ -69,15 +69,19 @@ setTimeout(async () => {
     await firebase.database().ref("Users/" + firebase.auth().currentUser.uid + "/Events/").orderByChild(dateWanted).once('value', snapshot => {
       let events_for_date = snapshot.val()
       try {
-
         Object.keys(events_for_date).forEach((item, i) => {
           let date_push = item
           let year = events_for_date[item][Object.keys(events_for_date[item])[0]].year
           let activites = Object.keys(events_for_date[item])
+          let values = Object.values(events_for_date[item])
           for(let a = 0; a<activites.length;a++){
+            console.log()
             flatendObject = allEvents.flat(Infinity)
+            //Done like this to reduce false positives, in the case of same events
+            //So [date1, year1, activity1, date2, year1, activity1], with indexOf -> true
+            //So [date1, year1, activity1, date2, year1, activity1], with includes(date, year and activites) -> false
             if(flatendObject.join(" ").includes(`${date_push} ${year} ${activites[a]}`) == false){
-                allEvents.push([date_push, year, activites[a]])
+                allEvents.push([date_push, year,values[a].read, activites[a]])
             }
           }
         });
@@ -126,7 +130,7 @@ setTimeout(async () => {
         year: noteToAdd[2],
         read: false
       })
-      allEvents.push([$('.date').text(), $('.year').text(), noteToAdd[0]])
+      allEvents.push([$('.date').text(), $('.year').text(),false, noteToAdd[0]])
       setEvent(allEvents)
       $(".note").val('')
     }

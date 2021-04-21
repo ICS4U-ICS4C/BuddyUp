@@ -31,7 +31,7 @@ var images = [
   ]],
   "march april may",
   ["../images/springPics/s1.jpg", "../images/springPics/s2.jpeg", "../images/springPics/s3.png", [
-    ["white","white","white","black","black","white"],
+    ["black","black","black","black","black","black"],
     ["black","black","black","black","black","black"],
     ["white","white","white","black","black","white"]
   ]],

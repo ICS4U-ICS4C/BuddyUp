@@ -47,7 +47,6 @@ function randomPic(month){
           things_to_change[i].style.color = color_values_for_month[i]
         }else{
           root.style.setProperty(`--color${i}`,color_values_for_month[i])
-          console.log(`color${i}`,color_values_for_month[i])
         }
       }
       break

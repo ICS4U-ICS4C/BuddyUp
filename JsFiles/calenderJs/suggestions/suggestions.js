@@ -21,7 +21,7 @@ async function sendMessage(user, subject, sendTo) {
 }
 
 //Finds people based on status and makes sure it is not current user
-async function findPeople(subject) {
+async function findPeople(subject, index) {
   await firebase.database().ref(`upvote/${subject}`).once('value', async snapshot => {
     if (snapshot.exists()){
       //Sorts from greatest to least in terms of points
@@ -54,6 +54,8 @@ async function findPeople(subject) {
             for (let i = 0; i < validNames.length; i++) {
               await sendMessage(active_user, subject, names[i])
             }
+            //Sets read to be true o that samse sugegstion does not keep appering
+            await firebase.database().ref(`Users/${firebase.auth().currentUser.uid}/Events/${allEvents[index][0]}/${allEvents[index][3]}/read`).set(true)
             //Delete notifcation
             notifcation = event.currentTarget.parentNode.parentNode
             notifcation.classList.add('animate-out')
@@ -69,6 +71,8 @@ async function findPeople(subject) {
             setTimeout(()=>{
               notifcation.remove()
             },500)
+            //Sets read to be true o that samse sugegstion does not keep appering
+            await firebase.database().ref(`Users/${firebase.auth().currentUser.uid}/Events/${allEvents[index][0]}/${allEvents[index][3]}/read`).set(true)
             break;
         }
       })
