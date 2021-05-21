@@ -1,47 +1,77 @@
-<!--
-HTML && CSS Code: This code was made by Harsh Trivedi
- -->
-
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>BuddyUp</title>
-    <link href="../cssFiles/nav.css" rel="stylesheet" type="text/css"/>
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>BuddyUp</title>
+  <link href="../cssFiles/nav.css" rel="stylesheet" type="text/css" />
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
+
 <body>
-
-    <div id="nav-bar">
-        <nav>
-            <label class = "logo">BuddyUp</label>
-            <ul class="desk-nav">
-                <li><a id="nh" class="calendar" href="calendar.html">Calendar</a></li>
-                <li><a id="nh" class="meet" href="meet.html">Meet</a></li>
-                <li><a id="nh" class="settngs" href="settings.html">Settings</a></li>
-                <li><a id="nh" class="about">Logout</a></li>
-            </ul>
-        </nav>
+  <!-- Navbar -->
+  <div class="nav">
+    <div class="logo">
+      <img src="../images/footerPics/logo.PNG" style="max-width:20vh;">
     </div>
+    <div class="links">
 
-    <script>
-      var btns = document.querySelectorAll('#nh')
-      var logo = document.querySelector('.logo')
-      var nav = document.querySelector('nav')
-      if(sessionStorage.getItem('nav-color') == 'Default'){
-        btns.forEach((item, i) => {
-          item.style.color = 'white'
-        });
-        logo.style.color = 'white'
-        nav.style.backgroundColor = '#222227'
-      } else{
-        btns.forEach((item, i) => {
-          item.style.color = 'black'
-        });
-        logo.style.color = 'black'
-        nav.style.backgroundColor = 'white'
-      }
-    </script>
-    <script src="../JsFiles/ModuleFunctions.js"></script>
+      <div class="dbl">
+        <div class="icon"></div><i class="fa fa-home" style="margin-right:1rem;"></i>
+        <div class="link"><a href="../index.html">HOME</a></div>
+      </div>
+
+      <div class="dbl">
+        <div class="icon"><i class="fa fa-calendar" style="margin-right:1rem;"></i></div>
+        <div class="link"><a href="html/sys.html">CALENDAR</a></div>
+      </div>
+      <div class="dbl">
+        <div class="icon"><i class="fa fa-commenting" style="margin-right:1rem;"></i></div>
+        <div class="link"><a href="html/guide.html">MEET</a></div>
+      </div>
+
+      <div class="dbl">
+        <div class="icon"><i class="fa fa-wrench" style="margin-right:1rem;"></i></div>
+        <div class="link"><a href="html/feb.html">SETTINGS</a></div>
+      </div>
+
+    </div>
+    <div class="nav_cont">
+      <div class="h_menu" data-open-type="closed">
+        <div class="menu">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="menu_cont">
+        <div class="logo_m" style="display:flex;">
+          <img src="../images/footerPics/logo.PNG" style="max-width:20vh;">
+        </div>
+        <div class="links_m">
+
+          <div class="dbl_m">
+            <div class="icon"><i class="fa fa-home" style="margin-right:1rem;"></i></div>
+            <div class="link"><a href="../index.html">HOME</a></div>
+          </div>
+
+          <div class="dbl_m">
+            <div class="icon"><i class="fa fa-calendar" style="margin-right:1rem;"></i></div>
+            <div class="link"><a href="sys.html">CALENDAR</a></div>
+          </div>
+          <div class="dbl_m">
+            <div class="icon"><i class="fa fa-commenting" style="margin-right:1rem;"></i></div>
+            <div class="link"><a href="guide.html">MEET</a></div>
+          </div>
+
+          <div class="dbl_m">
+            <div class="icon"><i class="fa fa-wrench" style="margin-right:1rem;"></i></div>
+            <div class="link"><a href="feb.html">SETTINGS</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../jsFiles/navbar/toggle.js"></script>
+</body>
 </html>
