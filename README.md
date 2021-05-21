@@ -1,6 +1,5 @@
 # Link
-https://ics4u-ics4c.github.io/buddyup-buddyup2-0/
-Hello
+https://ics4u-ics4c.github.io/BuddyUp/
 
 
 Here is the old way of checking if a user is signed in. I am storing this here just for back up
