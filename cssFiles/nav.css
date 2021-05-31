@@ -181,24 +181,24 @@ transform: rotate(-135deg);
 }
 
 .dbl_m.open:nth-child(2){
-  animation-delay: .5s;
+  animation-delay: .3s;
 }
 
 .dbl_m.open:nth-child(3){
-  animation-delay: 1s;
+  animation-delay: .6s;
 }
 
 .dbl_m.open:nth-child(4){
-  animation-delay: 1.5s;
+  animation-delay: .9s;
 }
 
 /* desktop */
 .logo{
-  animation: slideIn 1s forwards;
+  animation: slideIn .3s forwards;
 }
 
 .dbl{
-	animation: slideIn 1s forwards;
+	animation: slideIn .3s forwards;
 }
 
 .dbl:nth-child(1){
@@ -206,15 +206,15 @@ transform: rotate(-135deg);
 }
 
 .dbl:nth-child(2){
-  animation-delay: .5s;
+  animation-delay: .3s;
 }
 
 .dbl:nth-child(3){
-  animation-delay: 1s;
+  animation-delay: .6s;
 }
 
 .dbl:nth-child(4){
-  animation-delay: 1.5s;
+  animation-delay: .9s;
 }
 /* Credits for animation https://codepen.io/simou/pen/MWKQeLB */
 @keyframes slideIn {

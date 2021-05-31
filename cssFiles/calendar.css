@@ -352,3 +352,36 @@ margin-top: 16px;
 .calendar-cont .noteList li{
 	color:var(--color5)
 }
+
+.res_cont{
+	display: none;
+}
+
+/* R E S P O N S I V E  */
+/* done by Rahul */
+
+.res_cont{
+	height: 90vh;
+	width: 100vw;
+	background-image: url('../images/fallPics/f2.jpg');
+	background-size: cover;
+}
+
+.res_cont.flip{
+	animation: flip 1s; 
+}
+
+@keyframes flip{
+	to{
+		transform: rotateX(180deg);
+	}
+}
+
+@media only screen and (max-width: 769px){
+	.calendar-cont{
+		display: none;
+	}
+	.res_cont{
+		display: block;
+	}
+}
