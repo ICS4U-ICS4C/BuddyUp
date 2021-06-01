@@ -38,9 +38,11 @@ function autoSwap() {
 setTimeout(autoSwap,6000)
 
 $(".bg, .cont_1, .arr").mouseover(function(){
+  if($('.login_container').is(":visible") == false){
   document.querySelector('button[name=right_arr]').style.right = '0'
   document.querySelector('button[name=left_arr]').style.left = '0'
   pause = true
+}
 })
 
 $(".bg").mouseleave(function(){

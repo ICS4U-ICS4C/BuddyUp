@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>BuddyUp</title>
     <link href="cssFiles/index.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script>
       $(function() {
@@ -16,9 +17,13 @@
   </head>
 
   <body>
+    <!-- Load navbar -->
     <div id="nav-placeholder"></div>
+
+    <!-- Background -->
     <div class="bg" style="background-image:url(images/slideshow/picture_1.jpg);"></div>
 
+    <!-- slideshow -->
     <div class="cont_1">
 
       <div class="text">
@@ -27,17 +32,55 @@
       </div>
 
       <div class="button">
-        <button type="button" name="b_1">JOIN NOW</button>
+        <button type="button" name="b_1" class="dl">JOIN NOW</button>
       </div>
 
     </div>
 
+    <!-- Arrows -->
     <div class="arrows">
       <button class="arr" type="button" name="right_arr">></button>
       <button class="arr" type="button" name="left_arr"><</button>
     </div>
 
+    <!-- Login or signup -->
+    <div class="login_container">
+      <div class="l_1">
+      <div class="cover">
+        <h1 class="c_t">Welcome Back!</h1>
+        <p class="c_p">Sign in to make your PC</p>
+        <button type="button" class="coverbutton" name="button">SIGN UP</button>
+      </div>
+      <div class="form">
+        <div class="login_title">LOGIN</div>
+          <ul class="login_fourm">
+              <li><input class="email" placeholder="Email" type="email"></li>
+              <li><input class = "password" placeholder="Password" type="password" ></li>
+              <p class="er" style="display:none;">Missing information</p>
+              <li><button class="log_sign">SIGN IN</button><br></li>
+              <li><p class="fp">Forgot password</p></li>
+          </ul>
+
+          <div class="close"><i class="fa fa-times" aria-hidden="true"></i></div>
+      </div>
+    </div>
+    <div class="l_2">
+      <div class="form_m">
+        <div class="login_title_m">LOGIN</div>
+          <ul class="login_fourm_m">
+              <li><input class="email" placeholder="Email" type="email"></li>
+              <li><input class="password" placeholder="password" type="password"></li>
+              <li><button class="log_sign_m">SIGN IN</button><br></li>
+              <p class="er" style="display:none;">Missing information</p>
+              <li><p class="f_p">Forgot password</p></li>
+              <li><p class="l_r">SIGN UP</p></li>
+          </ul>
+      </div>
+    </div>
+    </div>
+    <!-- Scripts -->
     <script src="JsFiles/home/slideshow.js"></script>
+    <script src="/JsFiles/LoginJs/miscellaneous/DSPLP.js"></script>
   </body>
 
 </html>
