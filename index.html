@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
   <head>
     <meta charset="utf-8">
     <title>BuddyUp</title>
@@ -7,26 +8,36 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script>
       $(function() {
-        $("#nav-placeholder").load("HtmlFiles/initalNav.html");
+        $("#nav-placeholder").load("HtmlFiles/initalnav.html");
       });
     </script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
   </head>
-  <body>
 
+  <body>
     <div id="nav-placeholder"></div>
-    <section class = "display">
-      <video src = "videos/Pexels Videos 2344549.mp4" muted loop autoplay></video>
-      <!-- https://vimeo.com/441003525 -->
-      <div class = "border"></div>
-      <div class = "Our-mission">
-        <h1>Our Mission</h1>
-        <h2>"Provide a space where students of all ages can engage and learn from each other"</h2>
-        <p>&emsp;-BuddyUp team</p>
-        <a href = "#"> Login</a>
+    <div class="bg" style="background-image:url(images/slideshow/picture_1.jpg);"></div>
+
+    <div class="cont_1">
+
+      <div class="text">
+        <h1 class="main_text" style="color:white; font-size:3rem;">Manage Your Time With <span class="special"><strong style="color:#FFFF66;">Ease</strong></span></h1>
+        <h3 class="sub_text" style="color:white; font-size:1.25rem;"></h3>
       </div>
-    </section>
-    <script src="JsFiles/navbar/index.js"></script>
+
+      <div class="button">
+        <button type="button" name="b_1">JOIN NOW</button>
+      </div>
+
+    </div>
+
+    <div class="arrows">
+      <button class="arr" type="button" name="right_arr">></button>
+      <button class="arr" type="button" name="left_arr"><</button>
+    </div>
+
+    <script src="JsFiles/home/slideshow.js"></script>
   </body>
+
 </html>

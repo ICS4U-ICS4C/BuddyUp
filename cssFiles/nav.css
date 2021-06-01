@@ -23,6 +23,8 @@ body{
 
 /* N A V B A R D E S K T O P */
 .nav{
+  margin: 0;
+  padding: 0;
   background-color: var(--color_2);
   height: 10vh;
   width: 100vw;
@@ -31,7 +33,7 @@ body{
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
-/* .menu{
+.menu{
 	position: absolute;
 	top:0;
 	display: flex;
@@ -39,11 +41,11 @@ body{
 	height: 10%;
 	right:5%;
 	justify-content: center;
-} */
+}
 
 .logo{
   position: absolute;
-  margin-top: 3vh;
+  margin-top: 1vh;
   margin-left: 4vw;
   transform: translateX(-100rem)
 }
@@ -130,10 +132,12 @@ a{
 }
 
 .logo_m{
+  padding: none;
+  margin: none;
   position: absolute;
-  top: 10%;
   display: flex;
-  width: 100%;
+  top: 10%;
+  width: 100vw;
   justify-content: center;
   transform: translateX(-105rem)
 }
