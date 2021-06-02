@@ -1,9 +1,9 @@
 var count = 0
 var pause = false
 var cs = {
-  '0': ["images/slideshow/picture_1.jpg", "Manage Your Time With <span class=special><strong style=color:#FFFF66;>Ease</strong></span>", ""],
-  '1': ["images/slideshow/picture_2.jpg", "Studying Made <span class=special><strong style=color:#FFFF66;>Easier</strong></span>", ""],
-  '2': ["images/slideshow/picture_3.jpg", "Achive Your <span class=special><strong style=color:#FFFF66;>Dreams</strong></span>", ""]
+  '0': ["images/slideshow/picture_1.jpg", "Manage Your Time With <span class=special><strong style=color:#FFFF66;>Ease</strong></span>", "Highschool can be distracting that is why we at buddyUp help you manage your time so you can achive your dreams"],
+  '1': ["images/slideshow/picture_2.jpg", "Studying Made <span class=special><strong style=color:#FFFF66;>Easier</strong></span>", "Worried about an upcoming exam, with BuddyUp you can get help with the click of a button"],
+  '2': ["images/slideshow/picture_3.jpg", "Achieve Your <span class=special><strong style=color:#FFFF66;>Dreams</strong></span>", "Get help with school work, get connections and achieve your dreams"]
 }
 
 function swap() {

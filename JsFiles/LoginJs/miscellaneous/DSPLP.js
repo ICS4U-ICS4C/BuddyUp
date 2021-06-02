@@ -34,6 +34,7 @@ document.querySelector('.coverbutton').addEventListener('click',function(){
         document.querySelector('.c_t').textContent = "Hello There!"
         document.querySelector('.c_p').textContent = "Sign up to make your PC"
         document.querySelector('.close').style.left = "3%"
+        $('.profile-container').css('display','flex')
       },125)
 
       document.querySelector('.login_container .cover').animate([
@@ -66,6 +67,7 @@ document.querySelector('.coverbutton').addEventListener('click',function(){
         document.querySelector('.c_t').textContent = "Welcome Back!"
         document.querySelector('.c_p').textContent = "Sign in to make your PC"
         document.querySelector('.close').style.left = "93%"
+        $('.profile-container').css('display','none')
 
       },125)
 
@@ -90,12 +92,13 @@ document.querySelector('.l_r').addEventListener('click',function() {
   var element_array = {
     'l_r':["SIGN IN","SIGN UP"],
     'f_p':['None','Block'],
+    'profile-container-m':["flex","None"],
     'login_title_m':["SIGN UP","LOGIN"],
-    'log_sign_m':["SIGN UP","SIGN IN"]
+    'log_sign_m':["SIGN UP","SIGN IN"],
   }
 
   Object.keys(element_array).forEach((item, i) => {
-    if(i == 1){
+    if(i == 1 || i == 2){
       document.querySelector(`.${item}`).style.display = element_array[item][n_bool%2]
     }else{
       document.querySelector(`.${item}`).textContent = element_array[item][n_bool%2]

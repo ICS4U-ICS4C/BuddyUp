@@ -26,7 +26,7 @@
 .sub_text{
   text-align: left;
   margin-top: 5%;
-  max-width: 80%;
+  max-width: 100%;
 }
 
 .button{
@@ -35,7 +35,7 @@
 
 .button button{
   transition: .5s;
-  padding: 1.2%;
+  padding: 2%;
   background-color:#4B0082;
   outline: none;
   border: none;
@@ -262,10 +262,43 @@ button[name="left_arr"]{
   margin-top: 5%;
 }
 
+.profile-container{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.circle{
+  height: 100px;
+  width: 100px;
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 50%;
+}
+
+.custom-btn{
+  position: absolute;
+  color:black;
+}
+
+.profile-container-m{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 /* Animation */
 
 
  @media only screen and (max-width: 1143px){
+
+   .close{
+     font-size: 2rem;
+   }
+
    .l_1{
      display:none;
    }
