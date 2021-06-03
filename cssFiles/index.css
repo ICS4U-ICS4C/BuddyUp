@@ -277,11 +277,6 @@ button[name="left_arr"]{
   border-radius: 50%;
 }
 
-.custom-btn{
-  position: absolute;
-  color:black;
-}
-
 .profile-container-m{
   width: 100%;
   display: flex;
