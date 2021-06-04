@@ -111,5 +111,14 @@ document.querySelector('.l_r').addEventListener('click',function() {
 
 // forgot password display
 $('.f_p,.fp').click(function(){
-  
+  $('.password, .password_m').toggle()
+  if($(this).text() == 'Forgot password'){
+    $('.login_title_m, .login_title').text('Forgot password')
+    $(this).text('back')
+    $('.l_r,.log_sign').text('Send reset')
+  }else{
+    $('.login_title_m, .login_title').text('LOGIN')
+    $(this).text('Forgot password')
+    $('.l_r,.log_sign').text('SIGN IN')
+  }
 })
