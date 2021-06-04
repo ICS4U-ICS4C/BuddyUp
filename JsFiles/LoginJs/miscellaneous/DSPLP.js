@@ -13,9 +13,10 @@ $('.close').click(()=>{
 })
 
 document.querySelector('.coverbutton').addEventListener('click',function(){
+  $('.f_p,.fp').text('Forgot password')
+  $('.password, .password_m').show()
   var c_switch = document.querySelector('.coverbutton').textContent
   document.querySelector('.er, .button').style.display = 'none'
-
   if(c_switch == 'SIGN UP'){
       document.querySelector('.login_container .form').animate([
         {right:"0%"},
