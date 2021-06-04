@@ -107,3 +107,9 @@ document.querySelector('.l_r').addEventListener('click',function() {
 
   n_bool++
 })
+
+
+// forgot password display
+$('.f_p,.fp').click(function(){
+  
+})

@@ -34,7 +34,3 @@ function signIn(){
 
 //Sets chat to general
 sessionStorage.setItem("chat","general")
-
-//Type writer effect
-
-//---variables---//

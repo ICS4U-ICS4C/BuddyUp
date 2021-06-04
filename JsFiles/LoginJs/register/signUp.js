@@ -1,4 +1,4 @@
-let file = {}
+// let file = {}
 //SignUp function
 function chooseFile(e){
   file = e.target.files[0]
