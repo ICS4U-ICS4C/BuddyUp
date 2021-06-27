@@ -37,22 +37,25 @@ function shake(element) {
 //firebase variables & functions
 
 //Set name and image
-// setTimeout(async() => {
-//
-//   await firebase.database().ref('Users/' + firebase.auth().currentUser.uid).on('value', async function(snapshot) {
-//     sessionStorage.setItem("username",snapshot.val().name)
-//   })
-//
-//   await firebase.storage().ref('/Users/' + firebase.auth().currentUser.uid + '/profile').getDownloadURL().then(imgUrl=>{
-//     /* ---Using sessionStorage probably a bad thing should just input into variable---*/
-//     sessionStorage.setItem("URL",imgUrl)
-//   })
-// }, 2000)
-// async function sendToServer(obj, path = sessionStorage.getItem('chat')){
-//   /* ---Sets a random key so that data does not get overwritten--- */
-//   autoId = firebase.database().ref('users').push().key
-//   /* ---Actully updates the server---  */
-//   await firebase.database().ref(`${path}/` + autoId.toString()).set(obj)
-// }
+  setTimeout(async() => {
+    try{
+          await firebase.database().ref('Users/' + firebase.auth().currentUser.uid).on('value', async function(snapshot) {
+            sessionStorage.setItem("username",snapshot.val().name)
+          })
 
+          await firebase.storage().ref('/Users/' + firebase.auth().currentUser.uid + '/profile').getDownloadURL().then(imgUrl=>{
+            /* ---Using sessionStorage probably a bad thing should just input into variable---*/
+            sessionStorage.setItem("URL",imgUrl)
+          })
+    }catch{
+
+    }
+  }, 2000)
+
+  async function sendToServer(obj, path = sessionStorage.getItem('chat')){
+    /* ---Sets a random key so that data does not get overwritten--- */
+    autoId = firebase.database().ref('users').push().key
+    /* ---Actully updates the server---  */
+    await firebase.database().ref(`${path}/` + autoId.toString()).set(obj)
+  }
 //Send functions

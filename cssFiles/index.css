@@ -1,401 +1,148 @@
-*{
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
+/*
+Code: index.CSS was made by Harsh Trivedi
+ */
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
 }
 
-.bg{
+.display {
   position: absolute;
-  top:0;
-  z-index: -5;
-  height: 100vh;
-  width: 100vw;
-  background-repeat: no-repeat;
-  background-size: cover;
-  object-fit: fill;
-  filter: brightness(60%);
-}
-
-/* C A R E S O U E L */
-.cont_1{
-  position: absolute;
-  left: 10%;
-  top: 40%;
-}
-
-.sub_text{
-  text-align: left;
-  margin-top: 5%;
-  max-width: 100%;
-}
-
-.button{
-  margin-top: 1%;
-}
-
-.button button{
-  transition: .5s;
-  padding: 2%;
-  background-color:#4B0082;
-  outline: none;
-  border: none;
-  color: white;
-  font-weight: 900;
-}
-
-.button button:hover{
-  transition: .5s;
-  background-color: yellow;
-  color:black;
-}
-
-.arr{
-  font-size: 1.4rem;
-  font-weight: 900;
-  padding: 1% .8%;
-  background-color:#4B0082;
-  border: none;
-  color:white;
-  transition: .5s;
-}
-
-.arr:hover{
-  transition: .5s;
-  background-color: yellow;
-  color:black;
-}
-
-button[name="right_arr"]{
-  position: absolute;
-  right: -100%;
-}
-
-button[name="left_arr"]{
-  position: absolute;
-  left: -100%;
-}
-
-.arrows{
-    position: absolute;
-    top: 50%;
-    width: 100%;
-}
-
-.cont_1:hover{
-  cursor: default;
-}
-
-/* R E S P O N S I V E */
-@media only screen and (max-width: 1143px){
-  .sub_text{
-    display: none;
-  }
-}
-
-
-/* Login form */
-
-.l_2{
-  display: none;
-}
-
-.login_container{
-  position: absolute;
-  height:65vh;
-  width: 65vw;
-  border-radius: 2vh;
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: auto;
-  margin-bottom: auto;
-  left: 0;
-  right: 0;
-  top:10vh;
-  bottom: 0;
+  right:0;
+  width: 100%;
+  min-height: 91vh;
+  padding: 100px;
   display: flex;
-}
-
-.close{
-  cursor: pointer;
-  color: white;
-  font-size: 2vw;
-  font-weight: 900;
-  position: absolute;
-  right:3%;
-  top:2.5%;
-}
-
-.close:hover{
-  color:red;
-}
-
-.login_container .cover{
-  position: absolute;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  color: #fff;
   z-index: 2;
-  height: 100%;
-  width: 40%;
-  background-color: rgba(0,0,0,0.9);
-  border-radius: 2vh 0 0 2vh;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  color: var(--color_6);
+  overflow: hidden;
 }
 
-.login_container .cover{
-  animation: signincover 2s ease;
-}
-
-.login_container .cover h1{
-  margin-top: 40%;
-}
-
-.login_container .cover p{
-  margin-top: 10%;
-  font-size: 1.5vw;
-  font-weight: 700;
-}
-.login_container .cover button{
-  margin-top: 3vh;
-  margin-left: 30%;
-  width: 40%;
-  height: 10%;
-  background: none;
-  outline: none;
-  border: 1px solid var(--color_6);
-  border-radius: 20vh;
-  color:var(--color_6);
-  font-size: 1.3vw;
-}
-
-.login_container .cover button:hover{
-  transition: .1s linear;
-  background: rgba(255,255,255,0.7);
-  border-color: rgba(255,255,255,0.7);
-
-
-}
-
-.login_container .form{
+.display video {
   position: absolute;
-  margin-left: 40%;
-  height:100%;
-  width: 60%;
-  background-color: rgba(0,0,0,0.6);
-  border-radius: 0 2vh 2vh 0;
+  top: 0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
 }
 
-
-.login_container .form{
-  display: flex;
-  flex-direction: column;
-}
-
-.login_container .form .login_title{
-  text-align: center;
-  margin-bottom: 5%;
-  margin-top: 15%;
-  color:var(--color_1);
-  font-size: var(--sub_title_size);
-  font-weight: 900;
-  text-decoration-color: white;
-}
-
-
-.login_container .form .login_fourm{
+.Our-mission {
   position: relative;
-  text-align: center;
-  list-style-type: none;
-  color: var(--color_6);
+  margin-bottom: 70px;
 }
 
-.login_container .form .login_fourm li:not(:first-child){
-  margin-top: 5%;
-}
-
- .login_container .form .login_fourm li input{
-	width: 40%;
-	height: 4vh;
-  text-align: center;
-  background-color:rgba(255,255,255,0.3) ;
-  border:none;
-  transition: .2s;
-  color:white;
-}
-
- .login_container .form .login_fourm li input:focus{
-   border: none;
-   outline: none;
-   transition: .2s;
-   width: 50%;
-   color:white;
-   font-size: 2vh;
- }
-
- .login_container .form .login_fourm li button{
-   width: 20%;
-   height: 4vh;
-   background-color: rgba(255,255,255,0.3);
-   border: none;
-   cursor: pointer;
-   color:white;
-   border-radius: 20vh;
-   transition: .2s;
- }
-
-.login_container .form .login_fourm li button:hover{
-  transition: .2s;
-  background-color: var(--color_1);
-  transform: scale(1.3);
-}
-
- .login_container .form .login_fourm li input::placeholder{
-   color: white;
- }
-
- .login_container .form .login_fourm li p{
-   cursor: pointer;
- }
-
-.er{
-  margin-top: 5%;
-}
-
-.profile-container{
+.border {
+  position: absolute;
+  top: 0;
+  left:0;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  height: 100%;
 }
 
-.circle{
-  height: 100px;
-  width: 100px;
-  background-color: rgba(255,255,255,0.5);
-  border-radius: 50%;
+.Our-mission h1{
+  font-weight: 500;
+  font-size: 3.5em;
+  line-height: 1em;
+  margin-bottom: 10px;
 }
 
-.profile-container-m{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+.Our-mission p {
+  margin-top: 10px;
+  font-size: 20px;
+  margin-bottom: 20px;
 }
 
-/* Animation */
+/* .Our-mission a {
+  display: inline-block;
+  font-size: 20px;
+  padding: 10px 29px;
+  background-color: white;
+  margin-top: 20px;
+  color: red;
+} */
 
+/* css for button */
 
- @media only screen and (max-width: 1143px){
+.Our-mission a {
+  background: rgba(0, 181, 204, 1);
+  text-decoration: none;
+  padding: 12px 25px;
+  color: #212123;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  position: relative;
+  top: 0;
+  left: 0;
+  box-shadow: -6px 6px 0px rgba(0, 181, 204, 1);
+  transition: 0.15s;
+}
 
-   .close{
-     font-size: 2rem;
-   }
+.Our-mission a:hover {
+  top: 3px;
+  left: -3px;
+  box-shadow: -3px 3px 0 #4b4737;
+}
 
-   .l_1{
-     display:none;
-   }
+.Our-mission a::after {
+  transition: 0.15s;
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: -4px;
+  width: 8px;
+  height: 8px;
+  background-color: #4b4737;
+  transform: rotate(45deg);
+  z-index: -1;
+}
 
-   .form_m li{
-     list-style-type: none;
-   }
+.Our-mission a::before {
+  transition: 0.15s;
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  right: 2px;
+  width: 8px;
+  height: 8px;
+  background-color: #4b4737;
+  transform: rotate(45deg);
+  z-index: -1;
+}
 
-   .l_2{
-     height: 100%;
-     width: 100%;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     justify-content: center;
-     background-color: rgba(0,0,0,0.7)
-   }
+.Our-mission a:hover::after {
+  top: 1px;
+  left: -2px;
+  width: 4px;
+  height: 4px;
+}
 
-   .form_m{
-   position: absolute;
-  }
+.Our-mission a:hover::before {
+  bottom: -2px;
+  right: 1px;
+  width: 4px;
+  height: 4px;
+}
 
-   .login_container .form_m .login_title_m{
-     text-align: center;
-     margin-bottom: 5%;
-     margin-top: 15%;
-     color:var(--color_1);
-     font-size: var(--sub_title_size);
-     font-weight: 900;
-     text-decoration:underline;
-     text-decoration-color: white;
-   }
+.Our-mission a:active {
+  top: 6px;
+  left: -6px;
+  box-shadow: none;
+}
 
+.Our-mission a:active::after {
+  top: 1px;
+  left: 1px;
+}
 
-   .login_container .form_m .login_fourm_m{
-     position: relative;
-     text-align: center;
-     list-style-type: none;
-     color: var(--color_6);
-   }
-
-   .login_container .form_m .login_fourm_m li:not(:first-child){
-     margin-top: 20%;
-   }
-
-   .login_container .form_m .login_fourm_m li:first-child{
-     margin-top: 20%;
-   }
-
-    .login_container .form_m .login_fourm_m li input{
-   	 width: 80%;
-   	 height: 4vh;
-     text-align: center;
-     background-color:rgba(255,255,255,0.2) ;
-     border:none;
-     color:white;
-     transition: .2s;
-   }
-
-    .login_container .form_m .login_fourm_m li input:focus{
-      border: none;
-      outline: none;
-      transition: .2s;
-      transform: scaleX(1.5) scaleY(1.3);
-      color:white;
-      font-size: 2vh;
-    }
-
-    .login_container .form_m .login_fourm_m li button{
-      width: 90%;
-      height: 4vh;
-      background-color:rgba(255,255,255,0.2);
-      border: none;
-      cursor: pointer;
-      color:white;
-      border-radius: 20vh;
-      transition: .2s;
-    }
-
-   .login_container .form_m .login_fourm_m li button:hover{
-     transition: .2s;
-     background-color: var(--color_1);
-     transform: scale(1.3);
-   }
-
-    .login_container .form_m .login_fourm_m li input::placeholder{
-      color: white;
-    }
-
-    .login_container .form_m .login_fourm_m li p{
-      cursor: pointer;
-    }
-
-    .f_p{
-      margin-top: -10%;
-    }
-
-    .er{
-      margin-top: 10%;
-    }
-
-    .l_r{
-      margin-top: -10%;
-    }
- }
+.Our-mission a:active::before {
+  bottom: 1px;
+  right: 1px;
+}
+/* link for box animation: https://codepen.io/knexx/pen/YzNVGQB */

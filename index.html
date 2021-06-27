@@ -1,105 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
   <head>
     <meta charset="utf-8">
     <title>BuddyUp</title>
     <link href="cssFiles/index.css" rel="stylesheet" type="text/css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
     <script>
       $(function() {
         $("#nav-placeholder").load("HtmlFiles/initalNav.html");
       });
     </script>
-
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
   </head>
-
   <body>
-    <!-- Load navbar -->
+
     <div id="nav-placeholder"></div>
-
-    <!-- Background -->
-    <div class="bg" style="background-image:url(images/slideshow/picture_1.jpg);"></div>
-
-    <!-- slideshow -->
-    <div class="cont_1">
-
-      <div class="text">
-        <h1 class="main_text" style="color:white; font-size:3rem;">Manage Your Time With <span class="special"><strong style="color:#FFFF66;">Ease</strong></span></h1>
-        <h3 class="sub_text" style="color:white; font-size:1.25rem;">Highschool can be distracting that is why we at buddyUp help you manage your time so you can achive your dreams</h3>
+    <section class = "display">
+      <video src = "../videos/Pexels Videos 2344549.mp4" muted loop autoplay></video>
+      <!-- https://vimeo.com/441003525 -->
+      <div class = "border"></div>
+      <div class = "Our-mission">
+        <h1>Our Mission</h1>
+        <h2>"Provide a space where students of all ages can engage and learn from each other"</h2>
+        <p>&emsp;-BuddyUp team</p>
+        <a href = "#"> Login</a>
       </div>
-
-      <div class="button">
-        <button type="button" name="b_1" class="dl">JOIN NOW</button>
-      </div>
-
-    </div>
-
-    <!-- Arrows -->
-    <div class="arrows">
-      <button class="arr" type="button" name="right_arr">></button>
-      <button class="arr" type="button" name="left_arr"><</button>
-    </div>
-
-    <!-- Login or signup -->
-    <div class="login_container">
-      <div class="l_1">
-      <div class="cover">
-        <h1 class="c_t">Welcome Back!</h1>
-        <p class="c_p">Sign in to make your PC</p>
-        <button type="button" class="coverbutton" name="button">SIGN UP</button>
-      </div>
-      <div class="form">
-        <div class="close"><i class="fa fa-times" aria-hidden="true"></i></div>
-        <div class="login_title">LOGIN</div>
-          <ul class="login_fourm">
-            <li>
-              <div class="profile-container" style="display:none;">
-                <div><input class="picture" type="file" id="upload-btn"accept="image/*" hidden></input></div>
-                <div><label for="upload-btn"><img src="https://icon-library.com/images/upload-image-icon-png/upload-image-icon-png-26.jpg"style="object-fit: cover;" class="circle" for="upload-btn"></img></label></div>
-              </div>
-            </li>
-
-              <li><input class="email" placeholder="Email" type="email"></li>
-              <li><input class = "password" placeholder="Password" type="password" ></li>
-              <p class="er" style="display:none;">Missing information</p>
-              <li><button class="log_sign">SIGN IN</button><br></li>
-              <li><p class="fp">Forgot password</p></li>
-          </ul>
-
-      </div>
-    </div>
-    <div class="l_2">
-      <div class="close"><i class="fa fa-times" aria-hidden="true"></i></div>
-      <div class="form_m">
-        <div class="login_title_m">LOGIN</div>
-          <ul class="login_fourm_m">
-            <li>
-              <div class="profile-container-m" style="display:none;">
-                <div><input class="picture_m" type="file" id="upload-btn"accept="image/*" hidden></input></div>
-                <div><label for="upload-btn"><img src="https://icon-library.com/images/upload-image-icon-png/upload-image-icon-png-26.jpg"style="object-fit: cover;" class="circle circle_m" for="upload-btn"></img></label></div>
-              </div>
-            </li>
-              <li><input class="email" placeholder="Email" type="email"></li>
-              <li><input class="password password_m" placeholder="password" type="password"></li>
-              <li><button class="log_sign_m">SIGN IN</button><br></li>
-              <p class="er" style="display:none;">Missing information</p>
-              <li><p class="f_p">Forgot password</p></li>
-              <li><p class="l_r">SIGN UP</p></li>
-          </ul>
-      </div>
-    </div>
-    </div>
-    <!-- Scripts -->
-    <script src="JsFiles/home/slideshow.js"></script>
-    <script src="JsFiles/home/profile.js"></script>
-    <script src="JsFiles/LoginJs/miscellaneous/DSPLP.js"></script>
+    </section>
+    <script src="JsFiles/navbar/index.js"></script>
   </body>
-
 </html>

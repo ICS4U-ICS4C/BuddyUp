@@ -1,241 +1,141 @@
-*{
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
+/*
+Code: nav.CSS was made by Harsh Trivedi
+ */
+
+@import url(https://fonts.googleapis.com/css?family=Exo:100,200,400);
+
+* {
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
 }
-
-body{
-  overflow: hidden;
-}
-
-:root{
-  --link_size:3vh;
-  --logo_size:4vh;
-  --sub_title_size:4vh;
-  --color_1:yellow;
-  --color_2:rgba(0,0,0,0.7);
-  --color_3:#43455C;
-  --color_5:#707793;
-  --color_6:rgb(255,255,255);
-}
-
-
-
-/* N A V B A R D E S K T O P */
-.nav{
-  margin: 0;
-  padding: 0;
-  background-color: var(--color_2);
-  height: 10vh;
-  width: 100vw;
-  border-bottom: 1vh solid var(--color_1);
-  display: flex;
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-}
-
-.menu{
-	position: absolute;
-	top:0;
-	display: flex;
-	flex-direction: column;
-	height: 10%;
-	right:5%;
-	justify-content: center;
-}
-
-.logo{
-  position: absolute;
-  margin-top: 1vh;
-  margin-left: 4vw;
-  transform: translateX(-100rem)
-}
-
-.logo:hover{
-  cursor: default;
-}
-
-.links{
-  color:white;
-  display: flex;
-  width: 50%;
-  height: 100%;
-  align-items: center;
-  justify-content: space-between;
-  margin-left: 45vw;
-}
-
-.dbl{
-  display: flex;
-  font-size: 1.2rem;
-  margin-right: 3vw;
-  transform: translateX(100rem);
-  transition: .5s;
-}
-
-.dbl:hover {
-  color:yellow;
-  cursor: pointer;
-  transition: .3s;
-}
-
-.dbl:hover a{
-  color: yellow;
-  transition: .3s;
-}
-
-a{
-  color:white;
-  transition: .3s;
-}
-
-/* N A V B A R M O B I L E */
-.h_menu{
-  position: absolute;
-  z-index: 655;
-  right: 2.5%;
-  display: flex;
-  height: 10%;
-  justify-content: center;
-  align-items: center;
-}
-
-.line{
-  width: 30px;
-  height: 5px;
-  background-color: white;
-  transition: .2s;
-}
-
-.line:not(:first-child){
-  margin-top: 5px;
-}
-
-.links_m{
-  color:white;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-}
-
-.dbl_m{
-  display: flex;
-  font-size: 1.2rem;
-  height: 15%;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  transform: translateX(100rem);
-  transition: .5s;
-}
-
-.logo_m{
-  padding: none;
-  margin: none;
-  position: absolute;
-  display: flex;
-  top: 10%;
-  width: 100vw;
-  justify-content: center;
-  transform: translateX(-105rem)
-}
-
-.menu_cont{
-	position: absolute;
-	top:0;
-	width: 0vw;
-	height: 100vh;
-	z-index: 654;
-	background-color: rgba(0,0,0,0.9)
-}
-
-.h_menu.open .line:nth-child(1){
-  transform: rotate(135deg);
-  position: absolute;
-  margin-top: 5px;
-}
-
-.h_menu.open .line:nth-child(2){
-  position: absolute;
-  margin-left: -30px;
-  opacity: 0;
-}
-
-.h_menu.open .line:nth-child(3){
-transform: rotate(-135deg);
-}
-
-.nav_cont{
+nav #navs{
 	display: none;
 }
-/* A N I M A T I O N */
-/* responsive */
-.logo_m.open{
-  animation: slideIn .5s forwards;
+body {
+	font-family: arial;
+}
+#nh{
+	transition: 0.6s;
+	outline: none;
+}
+#nh:hover{
+	border-top: 5px solid rgba(0, 181, 204, 1);
+}
+nav {
+	height: 75px;
+	width: 100%;
+	background: #222227;
 }
 
-.dbl_m.open{
-	animation: slideIn .5s forwards;
+.logo {
+	font-size: 1.5rem;
+	color: white;
+	margin-top:20px;
+	padding: 0 50px;
+	line-height: 80px;
+	cursor: pointer;
+	transition: 0.6s;
 }
 
-.dbl_m.open:nth-child(1){
-  animation-delay: 0s;
+ .logo:hover{
+	 color: rgba(0, 181, 204, 1);
+	 font-size: 2rem;
 }
 
-.dbl_m.open:nth-child(2){
-  animation-delay: .3s;
+nav ul {
+	float: right;
+	margin-right: 40px;
 }
 
-.dbl_m.open:nth-child(3){
-  animation-delay: .6s;
+nav li {
+	display: inline-block;
+	margin: 0px;
+	line-height: 80px;
 }
 
-.dbl_m.open:nth-child(4){
-  animation-delay: .9s;
+nav a {
+	color: white;
+	font-size: 18px;
+	border: 4px solid transparent;
+	padding: 20px 10px;
+	border-radius: 3px;
 }
 
-/* desktop */
+nav #navs {
+	color: white;
+	font-size: 20px;
+	line-height: 80px;
+	float: right;
+	margin-right: 40px;
+	cursor: pointer;
+}
+
+@media (max-width: 1048px){
 .logo{
-  animation: slideIn .3s forwards;
-}
+		font-size: 35px;
+		padding-left: 60px;
+	}
 
-.dbl{
-	animation: slideIn .3s forwards;
-}
+	nav ul{
+		margin-right: 0px;
+	}
 
-.dbl:nth-child(1){
-  animation-delay: 0s;
-}
-
-.dbl:nth-child(2){
-  animation-delay: .3s;
-}
-
-.dbl:nth-child(3){
-  animation-delay: .6s;
-}
-
-.dbl:nth-child(4){
-  animation-delay: .9s;
-}
-/* Credits for animation https://codepen.io/simou/pen/MWKQeLB */
-@keyframes slideIn {
-  from{
-
-  }
-  to{
-  	transform: translateX(0);
-  }
-}
-
-/* R E S P O N S I V E */
-@media only screen and (max-width: 1143px){
-  .links{
-    display: none;
-  }
-	.nav_cont{
-		display: block;
+	nav a{
+		font-size: 17px;
 	}
 }
+
+@media (max-width: 909px){
+	nav #navs{
+		display: block;
+	}
+
+	nav ul{
+		height: 100vh;
+		background: #2f3640;
+		top: 80px;
+		text-align: center;
+		transition: all .5s;
+		width: 25%;
+		width: 35%;
+		display: none;
+}
+
+	nav li {
+		display: block;
+		margin: 45px 0;
+		line-height: 30px;
+		line-height: 30px;
+		margin: 50px 0;
+	}
+
+	nav a{
+		font-size: 20px;
+	}
+
+	nav ul .show{
+		left: 0;
+	}
+}
+
+@media (min-width: 1100px) {
+	.calendar {
+		margin-left: 100px;
+		margin-right: 100px;
+	}
+
+	.meet {
+		margin-left: 100px;
+		margin-right: 100px;
+	}
+
+	.about {
+		margin-left: 100px;
+		margin-right: 100px;
+	}
+
+	.Settings {
+		margin-left: 100px;
+		margin-right: 100px;
+	}

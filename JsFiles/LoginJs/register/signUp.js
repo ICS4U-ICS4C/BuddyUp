@@ -1,16 +1,16 @@
-// let file = {}
+let file = {}
 //SignUp function
 function chooseFile(e){
   file = e.target.files[0]
 }
 
 function signUp(email,password){
-
   firebase.auth().fetchSignInMethodsForEmail(email).then((sim)=>{ //sim -> Sign In Method
-    //
     if(sim.indexOf(firebase.auth.EmailAuthProvider.EMAIL_PASSWORD_SIGN_IN_METHOD) == -1){
+      console.log('st1')
       const root2 = firebase.database().ref('Users')
-      root2.orderByChild("name").equalTo($('input[name=user]').val()).once("value", (snapshot) => {
+
+      root2.orderByChild("name").equalTo($('input[name=user]').val()).on("value", (snapshot) => {
         if(!snapshot.exists() && $('input[name=user]').val() != ""){
           firebase.auth().createUserWithEmailAndPassword(email,password).then(function(user){
              firebase.auth().onAuthStateChanged(async function(user){
@@ -25,7 +25,7 @@ function signUp(email,password){
                })
 
                alert("Email was sent to : " + email + " to verify your account" + '\r\n' + "Please verify then log in.")
-               // window.location = "index.html"
+               window.location = "index.html"
              })
           }).catch(function(error){
            let errorCode = error.code
@@ -56,7 +56,7 @@ function signUp(email,password){
 //Checking for validity and calls sign up
 function register() {
   //check if valid email
-  if (email.value.split('@')[1] != "pdsb.net" ) {
+  if (email.value.split('@')[1] != "pdsb.net" ){
     shake('input[name=username]')
     setValue('input[name=username]',"Invalid email only @pdsb.net")
     return
@@ -64,6 +64,5 @@ function register() {
   //check if passwords match
   if (original_password.value.toString() == confirm_password.value.toString()) {
     signUp(email.value, original_password.value)
-
   }
 }
